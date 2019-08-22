@@ -1,0 +1,269 @@
+yarn run v1.16.0
+$ start-storybook -p 6006 --debug-webpack
+Manager webpack config
+{ name: 'manager',
+  mode: 'development',
+  bail: false,
+  devtool: 'none',
+  entry: 
+   [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/server/common/polyfills.js',
+     '/Users/luchanso/dev/storybook-typescript-test/.storybook/addons.js',
+     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/client/manager/index.js' ],
+  output: 
+   { path: '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/public',
+     filename: '[name].[chunkhash].bundle.js',
+     publicPath: '' },
+  cache: {},
+  plugins: 
+   [ DllReferencePlugin {
+       options: 
+        { context: '/Users/luchanso/dev/storybook-typescript-test/node_modules/node_modules',
+          manifest: '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dll/storybook_ui-manifest.json' } },
+     HtmlWebpackPlugin {
+       options: 
+        { template: '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/server/templates/index.ejs',
+          templateContent: false,
+          templateParameters: [Function: templateParameters],
+          filename: 'index.html',
+          hash: false,
+          inject: false,
+          compile: true,
+          favicon: false,
+          minify: 'auto',
+          cache: true,
+          showErrors: true,
+          chunks: 'all',
+          excludeChunks: [],
+          chunksSortMode: 'none',
+          meta: {},
+          base: false,
+          title: 'Webpack App',
+          xhtml: false,
+          alwaysWriteToDisk: true },
+       childCompilerHash: undefined,
+       childCompilationOutputName: undefined,
+       assetJson: undefined,
+       hash: undefined,
+       version: 4 },
+     CaseSensitivePathsPlugin { options: {}, pathCache: {}, fsOperations: 0, primed: false },
+     DefinePlugin { definitions: {} },
+     DefinePlugin {
+       definitions: 
+        { 'process.env': { NODE_ENV: '"development"', NODE_PATH: '""', PUBLIC_URL: '""' },
+          NODE_ENV: '"development"' } },
+     ContextReplacementPlugin {
+       resourceRegExp: /graphql-language-service-interface[\/\\]dist/,
+       newContentResource: undefined,
+       newContentRecursive: undefined,
+       newContentRegExp: /\.js$/ },
+     NormalModuleReplacementPlugin { resourceRegExp: /core-js/, newResource: [Function] } ],
+  module: 
+   { rules: 
+      [ { test: /\.(mjs|jsx?)$/,
+          use: 
+           [ { loader: 'babel-loader',
+               options: 
+                { cacheDirectory: '/Users/luchanso/dev/storybook-typescript-test/node_modules/.cache/storybook',
+                  presets: 
+                   [ [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-env/lib/index.js',
+                       { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' } ],
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-react/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-flow/lib/index.js' ],
+                  plugins: 
+                   [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-proposal-class-properties/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-syntax-dynamic-import/lib/index.js',
+                     [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.js',
+                       { sourceMap: true, autoLabel: true } ],
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-macros/dist/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-transform-react-constant-elements/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-add-react-displayname/index.js',
+                     [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-react-docgen/lib/index.js',
+                       { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' } ] ] } } ],
+          include: [ '/Users/luchanso/dev/storybook-typescript-test' ],
+          exclude: 
+           [ '/Users/luchanso/dev/storybook-typescript-test/node_modules' ] },
+        { test: /\.css$/,
+          use: 
+           [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/style-loader/index.js',
+             { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/css-loader/dist/cjs.js',
+               options: { importLoaders: 1 } } ] },
+        { test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/,
+          loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/file-loader/dist/cjs.js',
+          query: { name: 'static/media/[name].[hash:8].[ext]' } },
+        { test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+          loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/url-loader/dist/cjs.js',
+          query: { limit: 10000, name: 'static/media/[name].[hash:8].[ext]' } } ] },
+  resolve: 
+   { extensions: [ '.mjs', '.js', '.jsx', '.json' ],
+     modules: [ 'node_modules' ],
+     alias: 
+      { '@emotion/core': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@emotion/core',
+        '@emotion/styled': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@emotion/styled',
+        'emotion-theming': '/Users/luchanso/dev/storybook-typescript-test/node_modules/emotion-theming',
+        '@storybook/addons': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/addons',
+        '@storybook/api': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/api',
+        '@storybook/channels': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/channels',
+        '@storybook/components': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/components',
+        '@storybook/core-events': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core-events',
+        '@storybook/router': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/router',
+        '@storybook/theming': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/theming',
+        '@storybook/ui': '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/ui',
+        'prop-types': '/Users/luchanso/dev/storybook-typescript-test/node_modules/prop-types',
+        react: '/Users/luchanso/dev/storybook-typescript-test/node_modules/react',
+        'react-dom': '/Users/luchanso/dev/storybook-typescript-test/node_modules/react-dom' } },
+  recordsPath: '/Users/luchanso/dev/storybook-typescript-test/node_modules/.cache/storybook/records.json',
+  performance: { hints: false },
+  optimization: { splitChunks: { chunks: 'all' }, runtimeChunk: true } }
+Preview webpack config
+{ mode: 'development',
+  bail: false,
+  devtool: '#cheap-module-source-map',
+  entry: 
+   [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/server/common/polyfills.js',
+     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/server/preview/globals.js',
+     '/Users/luchanso/dev/storybook-typescript-test/.storybook/config.js',
+     '/Users/luchanso/dev/storybook-typescript-test/node_modules/webpack-hot-middleware/client.js?reload=true' ],
+  output: 
+   { path: '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/public',
+     filename: '[name].[hash].bundle.js',
+     publicPath: '' },
+  plugins: 
+   [ HtmlWebpackPlugin {
+       options: 
+        { template: '/Users/luchanso/dev/storybook-typescript-test/node_modules/@storybook/core/dist/server/templates/index.ejs',
+          templateContent: false,
+          templateParameters: [Function: templateParameters],
+          filename: 'iframe.html',
+          hash: false,
+          inject: false,
+          compile: true,
+          favicon: false,
+          minify: 'auto',
+          cache: true,
+          showErrors: true,
+          chunks: 'all',
+          excludeChunks: [],
+          chunksSortMode: 'none',
+          meta: {},
+          base: false,
+          title: 'Webpack App',
+          xhtml: false,
+          alwaysWriteToDisk: true },
+       childCompilerHash: undefined,
+       childCompilationOutputName: undefined,
+       assetJson: undefined,
+       hash: undefined,
+       version: 4 },
+     DefinePlugin {
+       definitions: 
+        { 'process.env': { NODE_ENV: '"development"', NODE_PATH: '""', PUBLIC_URL: '"."' },
+          NODE_ENV: '"development"' } },
+     WatchMissingNodeModulesPlugin {
+       nodeModulesPath: '/Users/luchanso/dev/storybook-typescript-test/node_modules' },
+     HotModuleReplacementPlugin {
+       options: {},
+       multiStep: undefined,
+       fullBuildTimeout: 200,
+       requestTimeout: 10000 },
+     CaseSensitivePathsPlugin { options: {}, pathCache: {}, fsOperations: 0, primed: false },
+     ProgressPlugin {
+       profile: false,
+       handler: undefined,
+       modulesCount: 500,
+       showEntries: false,
+       showModules: true,
+       showActiveModules: true },
+     DefinePlugin { definitions: {} },
+     NormalModuleReplacementPlugin { resourceRegExp: /core-js/, newResource: [Function] } ],
+  module: 
+   { rules: 
+      [ { test: /\.(mjs|jsx?)$/,
+          use: 
+           [ { loader: 'babel-loader',
+               options: 
+                { cacheDirectory: '/Users/luchanso/dev/storybook-typescript-test/node_modules/.cache/storybook',
+                  presets: 
+                   [ [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-env/lib/index.js',
+                       { shippedProposals: true, useBuiltIns: 'usage', corejs: '3' } ],
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-react/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/preset-flow/lib/index.js' ],
+                  plugins: 
+                   [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-proposal-class-properties/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-syntax-dynamic-import/lib/index.js',
+                     [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-emotion/dist/babel-plugin-emotion.cjs.js',
+                       { sourceMap: true, autoLabel: true } ],
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-macros/dist/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/@babel/plugin-transform-react-constant-elements/lib/index.js',
+                     '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-add-react-displayname/index.js',
+                     [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/babel-plugin-react-docgen/lib/index.js',
+                       { DOC_GEN_COLLECTION_NAME: 'STORYBOOK_REACT_CLASSES' } ] ] } } ],
+          include: [ '/Users/luchanso/dev/storybook-typescript-test' ],
+          exclude: 
+           [ '/Users/luchanso/dev/storybook-typescript-test/node_modules' ] },
+        { test: /\.md$/,
+          use: 
+           [ { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/raw-loader/dist/cjs.js' } ] },
+        { test: /\.tsx?$/,
+          use: 
+           [ { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/ts-loader/index.js',
+               options: 
+                { configFile: '/Users/luchanso/dev/storybook-typescript-test/tsconfig.json' } },
+             { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/react-docgen-typescript-loader/dist/index.js',
+               options: 
+                { tsconfigPath: '/Users/luchanso/dev/storybook-typescript-test/tsconfig.json' } } ],
+          include: [ '/Users/luchanso/dev/storybook-typescript-test/src' ] },
+        { test: /\.css$/,
+          sideEffects: true,
+          use: 
+           [ '/Users/luchanso/dev/storybook-typescript-test/node_modules/style-loader/index.js',
+             { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/css-loader/dist/cjs.js',
+               options: { importLoaders: 1 } },
+             { loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/postcss-loader/src/index.js',
+               options: { ident: 'postcss', postcss: {}, plugins: [Function: plugins] } } ] },
+        { test: /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/,
+          loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/file-loader/dist/cjs.js',
+          query: { name: 'static/media/[name].[hash:8].[ext]' } },
+        { test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+          loader: '/Users/luchanso/dev/storybook-typescript-test/node_modules/url-loader/dist/cjs.js',
+          query: { limit: 10000, name: 'static/media/[name].[hash:8].[ext]' } } ] },
+  resolve: 
+   { extensions: [ '.mjs', '.js', '.jsx', '.json', '.ts', '.tsx' ],
+     modules: [ 'node_modules' ],
+     alias: 
+      { 'babel-runtime/core-js/object/assign': '/Users/luchanso/dev/storybook-typescript-test/node_modules/core-js/es/object/assign.js',
+        react: '/Users/luchanso/dev/storybook-typescript-test/node_modules/react',
+        'react-dom': '/Users/luchanso/dev/storybook-typescript-test/node_modules/react-dom' } },
+  optimization: 
+   { splitChunks: { chunks: 'all' },
+     runtimeChunk: true,
+     minimizer: 
+      [ TerserPlugin {
+          options: 
+           { test: /\.m?js(\?.*)?$/i,
+             chunkFilter: [Function: chunkFilter],
+             warningsFilter: [Function: warningsFilter],
+             extractComments: false,
+             sourceMap: true,
+             cache: true,
+             cacheKeys: [Function: cacheKeys],
+             parallel: true,
+             include: undefined,
+             exclude: undefined,
+             minify: undefined,
+             terserOptions: 
+              { output: { comments: /^\**!|@preserve|@license|@cc_on/i },
+                mangle: false,
+                keep_fnames: true } } } ] },
+  performance: { hints: false } }
+webpack built 5f6312d61b39ee6a82c0 in 6272ms
+╭──────────────────────────────────────────────────╮
+│                                                  │
+│   Storybook 5.1.11 started                       │
+│   6.2 s for manager and 6.72 s for preview       │
+│                                                  │
+│   Local:            http://localhost:6006/       │
+│   On your network:  http://172.28.69.76:6006/    │
+│                                                  │
+╰──────────────────────────────────────────────────╯
