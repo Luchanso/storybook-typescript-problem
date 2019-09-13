@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@storybook/addon-actions": "5.1.11",
     "@storybook/addon-links": "5.1.11",
     "@storybook/addons": "5.1.11",
@@ -19,8 +21,7 @@
     "@types/react": "16.9.2",
     "@types/storybook__react": "4.0.2",
     "babel-loader": "8.0.6",
-    "react-docgen-typescript-loader": "3.2.0",
-    "ts-loader": "6.1.0"
+    "react-docgen-typescript-loader": "3.2.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
