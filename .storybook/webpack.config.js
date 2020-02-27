@@ -8,7 +8,8 @@ module.exports = ({ config }) => {
         options: {
           presets: [
             require("@babel/preset-typescript").default,
-            require("@babel/preset-react").default
+            require("@babel/preset-react").default,
+            require("@babel/preset-env").default
           ]
         }
       },
